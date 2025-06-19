@@ -86,7 +86,7 @@ export default function Partners() {
                   className="w-full h-32 object-contain mb-2 mx-auto"
                   draggable={false}
                 />
-                <p className="text-sm">Quán Bida {i + 1}</p>
+                <p className="text-sm">Những khách hàng đã sử dụng sản phẩm và đánh giá tốt</p>
               </div>
             ))}
           </div>
