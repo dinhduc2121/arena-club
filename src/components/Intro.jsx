@@ -22,6 +22,7 @@ export default function Intro() {
       className="min-h-screen bg-black text-white px-6 py-16 flex items-center justify-center"
     >
       <div className="max-w-7xl w-full grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+        {/* Cột trái: Chữ */}
         <motion.div
           initial={{ x: -100, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
@@ -39,12 +40,13 @@ export default function Intro() {
           </p>
         </motion.div>
 
+        {/* Cột phải: Slider ảnh */}
         <motion.div
           initial={{ x: 100, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
           viewport={{ once: false, amount: 0.5 }}
           transition={{ duration: 0.8 }}
-          className="w-full"
+          className="w-full h-full"
         >
           <Swiper
             modules={[Autoplay, Pagination, Navigation]}
@@ -54,14 +56,17 @@ export default function Intro() {
             navigation
             autoplay={{ delay: 3000, disableOnInteraction: false }}
             grabCursor={true}
-            className="rounded-2xl overflow-hidden"
+            className="rounded-2xl overflow-hidden w-full h-[500px]"
           >
             {images.map((img, idx) => (
-              <SwiperSlide key={idx}>
+              <SwiperSlide
+                key={idx}
+                className="flex items-center justify-center w-full h-full"
+              >
                 <img
                   src={img}
                   alt={`slide-${idx}`}
-                  className="w-full h-[400px] object-cover"
+                  className="w-full h-full object-contain"
                 />
               </SwiperSlide>
             ))}
