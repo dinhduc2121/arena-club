@@ -74,10 +74,6 @@ export default function Gallery() {
             ))}
           </Swiper>
         </div>
-
-        <p className="text-sm mt-8 text-gray-400 italic text-center pb-10">
-          Hình ảnh thực tế từ bảng điểm Arena
-        </p>
       </motion.div>
     </section>
   );

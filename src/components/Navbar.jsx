@@ -22,7 +22,7 @@ export default function Navbar() {
           <a href="#intro" className="hover:text-teal-500 transition-all">Trang chủ</a>
           <a href="#hero" className="hover:text-teal-500 transition-all">Giới thiệu</a>
           <a href="#gallery" className="hover:text-teal-500 transition-all">Hình ảnh</a>
-          <a href="#partners" className="hover:text-teal-500 transition-all">Đối tác</a>
+          <a href="#ambassadors" className="hover:text-teal-500 transition-all">Đối tác</a>
           <a href="#details" className="hover:text-teal-500 transition-all">Chi tiết</a>
           <a href="#contact" className="hover:text-teal-500 transition-all">Liên hệ</a>
         </nav>
