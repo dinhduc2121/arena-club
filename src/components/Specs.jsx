@@ -9,14 +9,6 @@ export default function Specs() {
           <h1>RAM: 4GB</h1>
           <h1>ROM: 64GB</h1>
           <h1>Độ phân giải: Full HD (1080×1920)</h1>
-          <h1>Tấm nền: IPS</h1>
-          <h1>Tỉ lệ màn hình: 16:9</h1>
-          <h1>Độ sáng màn hình: 250-300 cd/m²</h1>
-          <h1>Tần số quét: 60Hz</h1>
-          <h1>Độ phủ màu: 100% sRGB</h1>
-          <h1>Loại cảm ứng: Cảm ứng hồng ngoại</h1>
-          <h1>Cảm ứng: 10 điểm chạm</h1>
-          <h1>Góc nhìn: 178 độ</h1>
       </ul>
     </div>
   );

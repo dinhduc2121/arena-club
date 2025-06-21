@@ -1,77 +1,84 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef, useEffect, useState } from "react";
 import { motion, useInView } from "framer-motion";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay } from "swiper/modules";
+import "swiper/css";
 
 export default function Gallery() {
-  const [startIndex, setStartIndex] = useState(0);
-  const [isMobile, setIsMobile] = useState(false);
   const sectionRef = useRef(null);
 
-  const inViewTop = useInView(sectionRef, { margin: "-100% 0px 0px 0px" });
-  const inViewFull = useInView(sectionRef, { threshold: 1 });
-  const [isVisible, setIsVisible] = useState(false);
+  // Kích hoạt khi bắt đầu lọt vào viewport (30%) và mất khi ra ngoài hoàn toàn
+  const inView = useInView(sectionRef, {
+    margin: "-20% 0px -20% 0px",
+  });
+
+  const [show, setShow] = useState(false);
+
+  useEffect(() => {
+    setShow(inView);
+  }, [inView]);
 
   const images = Array.from({ length: 7 }, (_, i) => `img${i + 1}.jpg`);
 
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setStartIndex((prev) => (prev + 1) % images.length);
-    }, 4000);
-    return () => clearInterval(interval);
-  }, [images.length]);
-
-  useEffect(() => {
-    if (inViewTop || inViewFull) setIsVisible(true);
-    if (!inViewTop && !inViewFull) setIsVisible(false);
-  }, [inViewTop, inViewFull]);
-
-  const count = isMobile ? 1 : 3;
-  const visibleImages = images.slice(startIndex, startIndex + count);
-  if (visibleImages.length < count) {
-    visibleImages.push(...images.slice(0, count - visibleImages.length));
-  }
-
   return (
-    <motion.section
+    <section
       ref={sectionRef}
       id="gallery"
-      className="text-center bg-black text-white py-20 px-4"
-      initial={{ opacity: 0, y: 50 }}
-      animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-      transition={{ duration: 0.8, ease: "easeOut" }}
+      className="bg-black text-white w-full"
     >
-      <h2 className="text-3xl font-bold mb-10">Hình ảnh sản phẩm</h2>
+      <motion.div
+        initial={{ opacity: 0, y: 100 }}
+        animate={show ? { opacity: 1, y: 0 } : { opacity: 0, y: -100 }}
+        transition={{ duration: 0.8, ease: "easeInOut" }}
+      >
+        <h2 className="text-3xl font-bold mb-4 text-teal-400 text-center mt-16">
+          Hình ảnh sản phẩm
+        </h2>
 
-      <div className={`grid ${isMobile ? "grid-cols-1" : "grid-cols-3"} gap-[10px] w-full`}>
-        {visibleImages.map((name, idx) => (
-          <motion.div
-            key={idx}
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={isVisible ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.95 }}
-            transition={{ duration: 0.4, ease: "easeInOut" }}
-            className="h-64 sm:h-80 md:h-[360px] bg-[#111] border border-gray-700 shadow-lg overflow-hidden flex items-center justify-center"
+        <p className="text-gray-300 max-w-2xl mx-auto mb-10 text-lg text-center">
+          Khám phá những khoảnh khắc nổi bật từ bảng điểm Arena – phong cách hiện đại, chất lượng sắc nét, và thiết kế ấn tượng từng chi tiết.
+        </p>
+
+        {/* Slider responsive */}
+        <div className="w-full max-w-[1600px] mx-auto px-4">
+          <Swiper
+            modules={[Autoplay]}
+            spaceBetween={20}
+            autoplay={{
+              delay: 4000,
+              disableOnInteraction: false,
+            }}
+            speed={1000}
+            loop={true}
+            grabCursor={true}
+            breakpoints={{
+              0: { slidesPerView: 1 },
+              768: { slidesPerView: 2 },
+              1024: { slidesPerView: 3 },
+            }}
           >
-            <img
-              src={`/images/${name}`}
-              alt={`Ảnh ${name}`}
-              className="w-full h-full object-contain"
-              draggable={false}
-            />
-          </motion.div>
-        ))}
-      </div>
+            {images.map((name, idx) => (
+              <SwiperSlide key={idx}>
+                <motion.div
+                  whileHover={{ scale: 1.01 }}
+                  className="w-full h-full flex items-center justify-center bg-[#111] border border-gray-900/30 rounded-xl shadow-lg overflow-hidden"
+                >
+                  <img
+                    src={`/images/${name}`}
+                    alt={`Ảnh ${name}`}
+                    className="w-full h-full object-contain"
+                    draggable={false}
+                  />
+                </motion.div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
 
-      <p className="text-sm mt-8 text-gray-400 italic">
-        Hình ảnh thực tế từ bảng điểm Arena
-      </p>
-    </motion.section>
+        <p className="text-sm mt-8 text-gray-400 italic text-center pb-10">
+          Hình ảnh thực tế từ bảng điểm Arena
+        </p>
+      </motion.div>
+    </section>
   );
 }

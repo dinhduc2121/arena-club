@@ -27,7 +27,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="bg-black text-white py-24 px-6 md:px-20 flex flex-col md:flex-row items-center justify-between gap-12"
+      className="bg-gray-800 text-white py-24 px-6 md:px-20 flex flex-col md:flex-row items-center justify-between gap-12"
     >
       <motion.div
         ref={leftRef}

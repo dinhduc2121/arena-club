@@ -3,7 +3,7 @@ import { FaFacebookF, FaInstagram, FaYoutube, FaEnvelope } from "react-icons/fa"
 
 export default function Footer() {
   return (
-    <footer className="bg-black text-teal-400 py-10 border-t border-teal-600">
+    <footer className="bg-blue-600 text-teal-400 py-10 border-t border-teal-600">
       <div className="max-w-6xl mx-auto px-4 flex flex-col md:flex-row justify-between items-start space-y-8 md:space-y-0 md:space-x-8">
         
         <div className="flex-1 space-y-4 text-left">

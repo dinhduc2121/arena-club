@@ -1,6 +1,5 @@
 import Hero from "./components/Hero";
 import Gallery from "./components/Gallery";
-import Partners from "./components/Partners";
 import Features from "./components/Features";
 import Specs from "./components/Specs";
 import Pricing from "./components/Pricing";
@@ -11,6 +10,8 @@ import Accordion from "./components/Accordion";
 import Customer from "./components/Comment";
 import Intro from "./components/Intro";
 import { motion } from "framer-motion";
+import Customers from "./components/Customers";
+import BrandAmbassadors from "./components/BrandAmbassadors";
 
 export default function App() {
 
@@ -36,11 +37,12 @@ export default function App() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-black via-[#012222] to-black text-white font-sans">
       <Navbar />
-      <main className="pt-20 space-y-24">
+      <main className="pt-20 space-y-1">
         <Intro />
         <Hero />
         <Gallery />
-        <Partners />
+        <Customers />
+        <BrandAmbassadors />  
 <section
   id="details"
   className="w-full px-4 sm:px-6 lg:px-12 py-16 bg-black text-white"
