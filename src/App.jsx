@@ -37,7 +37,7 @@ export default function App() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-black via-[#012222] to-black text-white font-sans">
       <Navbar />
-      <main className="pt-20 space-y-1">
+      <main className="pt-5 space-y-1">
         <Intro />
         <Hero />
         <Gallery />
@@ -45,7 +45,7 @@ export default function App() {
         <BrandAmbassadors />  
 <section
   id="details"
-  className="w-full px-4 sm:px-6 lg:px-12 py-16 bg-black text-white"
+  className="w-full px-4 sm:px-6 lg:px-12 py-16 bg-gray-800 text-white"
 >
   <h2 className="text-3xl font-bold mb-12 text-center">Chi tiết sản phẩm</h2>
 

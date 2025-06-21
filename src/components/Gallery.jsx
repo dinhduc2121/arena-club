@@ -7,7 +7,6 @@ import "swiper/css";
 export default function Gallery() {
   const sectionRef = useRef(null);
 
-  // Kích hoạt khi bắt đầu lọt vào viewport (30%) và mất khi ra ngoài hoàn toàn
   const inView = useInView(sectionRef, {
     margin: "-20% 0px -20% 0px",
   });
@@ -39,7 +38,6 @@ export default function Gallery() {
           Khám phá những khoảnh khắc nổi bật từ bảng điểm Arena – phong cách hiện đại, chất lượng sắc nét, và thiết kế ấn tượng từng chi tiết.
         </p>
 
-        {/* Slider responsive */}
         <div className="w-full max-w-[1600px] mx-auto px-4">
           <Swiper
             modules={[Autoplay]}
