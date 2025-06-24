@@ -29,7 +29,7 @@ export default function Customer() {
             key={idx}
             className="bg-[#111] border border-gray-700 p-6 rounded-lg shadow hover:shadow-lg transition text-left"
           >
-            <h3 className="text-lg font-semibold text-teal-400 mb-3">{fb.title}</h3>
+            <h3 className="text-lg font-semibold text-white mb-3">{fb.title}</h3>
             <p className="text-sm text-gray-300 leading-relaxed">{fb.content}</p>
             <p className="mt-4 italic text-gray-500">– Người chơi</p>
           </div>

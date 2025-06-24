@@ -3,14 +3,14 @@ import { FaFacebookF, FaInstagram, FaYoutube, FaEnvelope } from "react-icons/fa"
 
 export default function Footer() {
   return (
-    <footer className="bg-blue-600 text-teal-400 py-10 border-t border-teal-600">
+    <footer className="bg-blue-600 text-white py-10 border-t border-white">
       <div className="max-w-6xl mx-auto px-4 flex flex-col md:flex-row justify-between items-start space-y-8 md:space-y-0 md:space-x-8">
         
         <div className="flex-1 space-y-4 text-left">
-          <h2 className="text-2xl font-bold text-teal-300">
+          <h2 className="text-2xl font-bold text-white">
             Bảng điểm thông minh arena club
           </h2>
-          <p className="text-sm text-teal-400">
+          <p className="text-sm text-white">
             © {new Date().getFullYear()} Arena Club. All rights reserved.
           </p>
 
@@ -29,7 +29,7 @@ export default function Footer() {
             </a>
           </div>
 
-          <p className="text-xs text-teal-500 pt-2">Made with 💻 & ☕ in Bình Dương</p>
+          <p className="text-xs text-white pt-2">Made with 💻 & ☕ in Bình Dương</p>
         </div>
 
         <div className="flex-1 w-full md:w-1/2">

@@ -30,7 +30,7 @@ export default function Customers() {
         animate={show ? { opacity: 1, y: 0 } : { opacity: 0, y: -100 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
-        <h2 className="text-3xl font-bold text-teal-400 text-center mb-10">
+        <h2 className="text-3xl font-bold text-white text-center mb-10">
           Khách hàng
         </h2>
 

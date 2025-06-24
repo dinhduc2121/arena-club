@@ -74,7 +74,7 @@ const doiTacData = [
 export default function BrandAmbassadorsSlider() {
   return (
     <section id="ambassadors" className="bg-black text-white w-screen h-screen py-10 px-[60px]">
-      <h2 className="text-3xl font-bold text-center text-teal-400 mb-10">
+      <h2 className="text-3xl font-bold text-center text-white mb-10">
         Đại sứ thương hiệu
       </h2>
 

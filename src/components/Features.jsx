@@ -82,7 +82,7 @@ export default function Features() {
               className="w-full h-48 object-cover mb-4 rounded"
               draggable={false}
             />
-            <h3 className="text-xl font-bold mb-2 text-teal-400">{feature.title}</h3>
+            <h3 className="text-xl font-bold mb-2 text-white">{feature.title}</h3>
             <div className="text-sm text-gray-300 leading-relaxed">{feature.desc}</div>
           </div>
         ))}

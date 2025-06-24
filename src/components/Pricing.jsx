@@ -63,7 +63,7 @@ export default function Pricing() {
             <button
               className={`px-5 py-2 rounded font-semibold transition ${
                 plan.popular
-                  ? "bg-black text-teal-400 hover:bg-gray-800"
+                  ? "bg-black text-teal-400 hover:bg-blue-600"
                   : "bg-blue-600 text-black hover:bg-gray-200"
               }`}
             >

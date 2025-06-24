@@ -30,7 +30,7 @@ export default function Gallery() {
         animate={show ? { opacity: 1, y: 0 } : { opacity: 0, y: -100 }}
         transition={{ duration: 0.8, ease: "easeInOut" }}
       >
-        <h2 className="text-3xl font-bold mb-4 text-teal-400 text-center mt-16">
+        <h2 className="text-3xl font-bold mb-4 text-white text-center mt-16">
           Hình ảnh sản phẩm
         </h2>
 

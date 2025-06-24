@@ -37,7 +37,7 @@ export default function App() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-black via-[#012222] to-black text-white font-sans">
       <Navbar />
-      <main className="pt-5 space-y-1">
+      <main className="pt-2 space-y-1">
         <Intro />
         <Hero />
         <Gallery />

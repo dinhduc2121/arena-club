@@ -27,14 +27,14 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="bg-gray-800 text-white py-24 px-6 md:px-20 flex flex-col md:flex-row items-center justify-between gap-12"
+      className="bg-gray-800 text-white py-24 px-6 md:px-20 flex flex-col lg:flex-row items-center justify-between gap-12"
     >
       <motion.div
         ref={leftRef}
         initial={{ x: -100, opacity: 0 }}
         animate={showLeft ? { x: 0, opacity: 1 } : { x: -100, opacity: 0 }}
         transition={{ duration: 0.8, ease: "easeInOut" }}
-        className="md:w-3/5 space-y-4"
+        className="w-full lg:w-3/5 space-y-4"
       >
         <h1 className="text-4xl md:text-5xl font-extrabold leading-tight">
           Arena Club – Bảng điểm thông minh cho mọi bàn bida hiện đại
@@ -59,7 +59,7 @@ export default function Hero() {
         initial={{ x: 100, opacity: 0 }}
         animate={showRight ? { x: 0, opacity: 1 } : { x: 100, opacity: 0 }}
         transition={{ duration: 0.8, ease: "easeInOut" }}
-        className="md:w-2/5"
+        className="w-full lg:w-2/5"
       >
         <img
           src="/images/img.jpg"
